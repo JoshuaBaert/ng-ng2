@@ -4,7 +4,7 @@ describe('admin routes', function() {
     var view = 'app/admin/admin.html';
 
     beforeEach(function() {
-      module('app.admin', bard.fakeToastr);
+      module('app.features.admin', bard.fakeToastr);
       bard.inject('$httpBackend', '$location', '$rootScope', '$state', '$templateCache');
     });
 

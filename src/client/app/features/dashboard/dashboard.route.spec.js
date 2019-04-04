@@ -4,7 +4,7 @@ describe('dashboard routes', function() {
     var view = 'app/dashboard/dashboard.html';
 
     beforeEach(function() {
-      module('app.dashboard', bard.fakeToastr);
+      module('app.features.dashboard', bard.fakeToastr);
       bard.inject('$httpBackend', '$location', '$rootScope', '$state', '$templateCache');
     });
 

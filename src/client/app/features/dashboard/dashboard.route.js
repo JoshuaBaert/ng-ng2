@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.dashboard')
+    .module('app.features.dashboard')
     .run(appRun);
 
   appRun.$inject = ['routerHelper'];
@@ -17,7 +17,7 @@
         state: 'dashboard',
         config: {
           url: '/',
-          templateUrl: 'app/dashboard/dashboard.html',
+          templateUrl: 'app/features/dashboard/dashboard.html',
           controller: 'DashboardController',
           controllerAs: 'vm',
           title: 'dashboard',

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.admin')
+    .module('app.features.admin')
     .run(appRun);
 
   appRun.$inject = ['routerHelper'];
@@ -17,7 +17,7 @@
         state: 'admin',
         config: {
           url: '/admin',
-          templateUrl: 'app/admin/admin.html',
+          templateUrl: 'app/features/admin/admin.html',
           controller: 'AdminController',
           controllerAs: 'vm',
           title: 'Admin',
