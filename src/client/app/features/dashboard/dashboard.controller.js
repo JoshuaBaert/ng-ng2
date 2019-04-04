@@ -1,43 +1,37 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('app.features.dashboard')
-    .controller('DashboardController', DashboardController);
+    angular
+        .module('app.features.dashboard')
+        .controller('DashboardController', DashboardController);
 
-  DashboardController.$inject = ['$q', 'dataservice', 'logger'];
-  /* @ngInject */
-  function DashboardController($q, dataservice, logger) {
-    var vm = this;
-    vm.news = {
-      title: 'ngNg2',
-      description: 'Hot Towel Angular is a SPA template for Angular developers.'
-    };
-    vm.messageCount = 0;
-    vm.people = [];
-    vm.title = 'Dashboard';
+    DashboardController.$inject = ['$q', 'dataservice', 'logger'];
 
-    activate();
+    /* @ngInject */
+    function DashboardController($q, dataservice, logger) {
+        var vm = this;
+        vm.news = {
+            title: 'ngNg2',
+            description: 'Hot Towel Angular is a SPA template for Angular developers.',
+        };
+        vm.messageCount = 0;
+        vm.people = [];
+        vm.title = 'Dashboard';
 
-    function activate() {
-      var promises = [getMessageCount(), getPeople()];
-      return $q.all(promises).then(function() {
-        logger.info('Activated Dashboard View');
-      });
+        activate();
+
+        function activate() {
+            var promises = [getMessageCount()];
+            return $q.all(promises).then(function () {
+                logger.info('Activated Dashboard View');
+            });
+        }
+
+        function getMessageCount() {
+            return dataservice.getMessageCount().then(function (data) {
+                vm.messageCount = data;
+                return vm.messageCount;
+            });
+        }
     }
-
-    function getMessageCount() {
-      return dataservice.getMessageCount().then(function(data) {
-        vm.messageCount = data;
-        return vm.messageCount;
-      });
-    }
-
-    function getPeople() {
-      return dataservice.getPeople().then(function(data) {
-        vm.people = data;
-        return vm.people;
-      });
-    }
-  }
 })();

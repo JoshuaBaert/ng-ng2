@@ -1,5 +1,5 @@
 {
-  "name": "ngNg2",
+  "name": "ng-ng2",
   "version": "0.0.1",
   "description": "ngNg2",
   "authors": [],
@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "jquery": "~2.2.2",
-    "angular": "~1.5",
-    "angular-animate": "~1.5.9",
-    "angular-sanitize": "~1.5.9",
+    "angular": "~1.7",
+    "angular-animate": "~1.7",
+    "angular-sanitize": "~1.7",
     "bootstrap": "~3.3.6",
     "extras.angular.plus": "~0.9.2",
     "font-awesome": "~4.5.0",
@@ -30,7 +30,7 @@
     "angular-bootstrap": "~1.2.5"
   },
   "resolutions": {
-    "angular": "~1.5.9"
+    "angular": "~1.7"
   },
   "overrides": {
     "bootstrap": {
