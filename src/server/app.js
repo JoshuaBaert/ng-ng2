@@ -22,6 +22,10 @@ console.log('About to crank up node');
 console.log('PORT=' + port);
 console.log('NODE_ENV=' + environment);
 
+if (environment === undefined) {
+    environment = 'build'
+}
+
 switch (environment) {
   case 'build':
     console.log('** BUILD **');
